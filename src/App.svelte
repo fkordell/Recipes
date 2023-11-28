@@ -14,7 +14,7 @@
     window.addEventListener("popstate", () => {
         $route = window.location.hash;
     })
-    
+
 </script>
 
 <main>
@@ -22,6 +22,10 @@
     <div>
         {#if $route === '#login'}
             <Login />
+        {:else if $route === '#profile'}
+            <Profile />
+        {:else if $route === '#posting'}
+            <Posting />
         {:else if $route === '#recipe'}
             <Recipe />
         {:else if $route === '#signup'}
