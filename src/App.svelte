@@ -1,25 +1,41 @@
 <script>
-  let search = '';
-  const searchUrl = import.meta.env.VITE_SEARCH_URL;
+    import {
+        Landing,
+        Login,
+        Navbar,
+        Posting,
+        Profile,
+        Recipe,
+        Signup
+    } from "./lib/Index.js"
 
-    async function handleSearch(event) {
-        event.preventDefault();
+    import { route } from "./lib/stores.mjs";
 
-        const response = await fetch(`${searchUrl}${search}`);
-        const json = await response.json();
+    window.addEventListener("popstate", () => {
+        $route = window.location.hash;
+    })
 
-        console.log(json);
-    }
 </script>
 
 <main>
-    <form on:submit={handleSearch}>
-        <label for="search">Search for a recipe</label>
-        <input id="search" name="search" type="text" placeholder="Search..." bind:value={search}>
-        <button type="submit">Search</button>
-    </form>
+    <Navbar />
+    <div>
+        {#if $route === '#login'}
+            <Login />
+        {:else if $route === '#profile'}
+            <Profile />
+        {:else if $route === '#posting'}
+            <Posting />
+        {:else if $route === '#recipe'}
+            <Recipe />
+        {:else if $route === '#signup'}
+            <Signup />
+        {:else}
+            <Landing />
+        {/if}
+    </div>
 </main>
 
 <style>
-  
+
 </style>
