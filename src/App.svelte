@@ -2,6 +2,8 @@
     import Login from "./lib/Login.svelte";
     import Navbar from "./lib/Navbar.svelte";
     import Recipe from "./lib/Recipe.svelte";
+    import Landing from "./lib/Landing.svelte";
+    import Signup from "./lib/Signup.svelte";
     import { route } from "./lib/stores.mjs";
 
     window.addEventListener("popstate", () => {
@@ -18,12 +20,14 @@
             <Login />
         {:else if $route === '#recipe'}
             <Recipe />
+        {:else if $route === '#signup'}
+            <Signup />
         {:else}
-            <h2>Hello</h2>
+            <Landing />
         {/if}
     </div>
 </main>
 
 <style>
-  
+
 </style>
