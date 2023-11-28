@@ -1,23 +1,27 @@
 <script>
-  let search = '';
-  const searchUrl = import.meta.env.VITE_SEARCH_URL;
+    import Login from "./lib/Login.svelte";
+    import Navbar from "./lib/Navbar.svelte";
+    import Recipe from "./lib/Recipe.svelte";
+    import { route } from "./lib/stores.mjs";
 
-    async function handleSearch(event) {
-        event.preventDefault();
+    window.addEventListener("popstate", () => {
+        $route = window.location.hash;
+    })
 
-        const response = await fetch(`${searchUrl}${search}`);
-        const json = await response.json();
-
-        console.log(json);
-    }
+    
 </script>
 
 <main>
-    <form on:submit={handleSearch}>
-        <label for="search">Search for a recipe</label>
-        <input id="search" name="search" type="text" placeholder="Search..." bind:value={search}>
-        <button type="submit">Search</button>
-    </form>
+    <Navbar />
+    <div>
+        {#if $route === '#login'}
+            <Login />
+        {:else if $route === '#recipe'}
+            <Recipe />
+        {:else}
+            <h2>Hello</h2>
+        {/if}
+    </div>
 </main>
 
 <style>
