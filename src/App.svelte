@@ -8,6 +8,8 @@
         Recipe,
         Signup
     } from "./lib/Index.js"
+    import RegistrationForm from "./lib/components/RegistrationForm.svelte";
+    import SignIn from "./lib/components/signIn.svelte";
 
     import { route } from "./lib/stores.mjs";
 
@@ -21,7 +23,7 @@
     <Navbar />
     <div>
         {#if $route === '#login'}
-            <Login />
+            <SignIn />
         {:else if $route === '#profile'}
             <Profile />
         {:else if $route === '#posting'}
@@ -29,7 +31,7 @@
         {:else if $route === '#recipe'}
             <Recipe />
         {:else if $route === '#signup'}
-            <Signup />
+            <RegistrationForm />
         {:else}
             <Landing />
         {/if}
