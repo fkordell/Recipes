@@ -81,7 +81,6 @@
         font-size: 30px;
       }
       #register-button{
-        margin-left: 200px;
         width: 150px;
       }
       #register-button:hover{
