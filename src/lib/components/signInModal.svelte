@@ -28,8 +28,8 @@
   <div class="modal-overlay">
     <div class="modal">
       <span class="close-button" on:click={closeModal}>&times;</span>
-      <h2>Welcome to Sleep Outside!</h2>
-      <p>Register now to enter our 4 season tents giveaway!</p>
+      <h2>Welcome to Recipes</h2>
+      <p>Register with us!</p>
       <button class="register-button">Register</button>
     </div>
   </div>
@@ -79,5 +79,8 @@
   
     .register-button:hover {
       background-color: #f08e39;
+    }
+    p, h2{
+      color: black;
     }
   </style>
