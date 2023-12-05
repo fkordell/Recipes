@@ -36,7 +36,7 @@
         {:else if $route === '#posts'}
             <Posts />
         {:else}
-            <Landing />
+            <Recipe />
         {/if}
     </div>
 </main>
