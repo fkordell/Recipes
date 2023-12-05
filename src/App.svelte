@@ -3,6 +3,7 @@
         Landing,
         Login,
         Navbar,
+        Posts,
         Posting,
         Profile,
         Recipe,
@@ -32,6 +33,8 @@
             <Recipe />
         {:else if $route === '#signup'}
             <RegistrationForm />
+        {:else if $route === '#posts'}
+            <Posts />
         {:else}
             <Landing />
         {/if}
