@@ -33,7 +33,7 @@
         {:else if $route === '#signup'}
             <RegistrationForm />
         {:else}
-            <Landing />
+            <Recipe />
         {/if}
     </div>
 </main>
