@@ -107,6 +107,9 @@ function displayResults(response) {
             font-size: 18px;
             margin: 0;
         }
+        #results-container {
+        text-align: left;
+    }
     </style>
 <main>
     <form>
@@ -120,3 +123,4 @@ function displayResults(response) {
         </div>
     </div>
 </main>
+
