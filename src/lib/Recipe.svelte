@@ -72,45 +72,46 @@ function displayResults(response) {
     });
 </script>
 
-    <style>
-        main {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-    
-        form {
-            margin-bottom: 20px;
-        }
-    
-        .recipe-card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin: 10px;
-            padding: 10px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-    
-        .recipe-card:hover {
-            transform: scale(1.05);
-        }
-    
-        .recipe-card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-    
-        .recipe-card h2 {
-            font-size: 18px;
-            margin: 0;
-        }
-        #results-container {
-        text-align: left;
+<style>
+    main {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
     }
-    </style>
+
+    form {
+        margin-bottom: 20px;
+    }
+
+    .recipe-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin: 10px;
+        padding: 10px;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+    .recipe-card:hover {
+        transform: scale(1.05);
+    }
+
+    .recipe-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .recipe-card h2 {
+        font-size: 18px;
+        margin: 0;
+    }
+    #results-container {
+    text-align: left;
+    }
+</style>
+
 <main>
     <form>
         <label for="search">Search for a recipe</label>
