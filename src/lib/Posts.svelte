@@ -1,45 +1,61 @@
 <h1>Latest Posts</h1>
-<div class="postsContainer">
-    <article class="post">
-        <h2 id="title">{title}</h2>
-        <p>{content}</p>
-        <p id="user">User: {username}</p>
-    </article>
-</div>
+{#if posts.length > 0}
+  <div class="postsContainer">
+    {#each posts as { recipe, account }}
+      <article class="post">
+        <h2 id="title">{recipe.label}</h2>
+        <img src={recipe.thumbnailImage} alt="Food">
+        <p>{recipe.description}</p>
+        <p id="user">User: {account.email}</p>
+      </article>
+    {/each}
+  </div>
+{:else}
+  <p>Loading...</p>
+{/if}
+
 
 
 <script>
     import { onMount } from 'svelte';
-    import { fetchData } from './supabaseClient.mjs'
+    import { fetchData, processData } from './supabaseClient.mjs'
 
-    let username = "caydenpark";
-    let title = "Macaroni & Cheese";
-    let content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
-
-
-    let posts = []
     fetchData();
+    let posts = [];
+    onMount(async () => {
+        posts = await processData();
+    });
         
 </script>
 
 
 <style>
     .postsContainer {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 20px;
     }
 
     .post {
+        display: block;
         border: 1px dashed black;
         padding: 10px;
         max-width: 400px;
+        width: 80%;
+        margin: 0 auto;
     }
 
     .post h2 {
         border-bottom: 1px solid black;
     }
 
+    .post p {
+        text-align: left;
+    }
+    .post img {
+        width: 80%;
+        margin: 10px 0;
+    }
     #user {
         text-align: left;
     }

@@ -55,3 +55,9 @@ function displayResults(response) {
 
     <div id="results-container"></div>
 </main>
+
+<style>
+    #results-container {
+        text-align: left;
+    }
+</style>
