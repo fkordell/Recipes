@@ -4,8 +4,30 @@
   <label for="label">Label:</label>
   <input type="text" id="label" bind:value={formData.label} required />
 
+  <label for="thumbImg">Thumbnial Image:</label>
+  <input type="text" id="thumbImg" bind:value={formData.thumbnailImage} />
+
+  <label for="prepImg">Prepared Image:</label>
+  <input type="text" id="prepImg" bind:value={formData.preparedImage} />
+
+  <label for="yield">Yield:</label>
+  <input type="number" id="yield" bind:value={formData.yield} />
+
+  <!-- Need a way to submit data in json format or change column data type to something else -->
+  <!-- <label for="ingredients">Ingredients:</label>
+  <input type="hidden" id="ingredients" bind:value={formData.ingredientLines} /> -->
+
+  <label for="calories">Calories:</label>
+  <input type="number" id="calories" bind:value={formData.calories} />
+
+  <label for="time">Total Prep Time:</label>
+  <input type="number" id="time" bind:value={formData.totalTime} />
+
+  <!-- <label for="instructions">Instructions:</label>
+  <input type="hidden" id="instructions" bind:value={formData.instructions} /> -->
+
   <label for="description">Description:</label>
-  <textarea id="description" bind:value={formData.description} required></textarea>
+  <textarea id="description" bind:value={formData.description}></textarea>
 
   <button type="submit">Submit</button>
 </form>
@@ -17,6 +39,13 @@
 
   let formData = {
     label: "",
+    thumbnailImage: "",
+    preparedImage: "",
+    yield: "",
+    ingredientLines: {},
+    calories: 0,
+    totalTime: 0,
+    instructions: {},
     description: "",
   };
 
@@ -27,6 +56,13 @@
         .upsert([
           {
             label: formData.label,
+            thumbnailImage: formData.thumbnailImage,
+            preparedImage: formData.preparedImage,
+            yield: formData.yield,
+            ingredientLines: formData.ingredientLines,
+            calories: formData.calories,
+            totalTime: formData.totalTime,
+            instructions: formData.instructions,
             description: formData.description,
           },
         ]);
