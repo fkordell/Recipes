@@ -11,7 +11,7 @@
         <!-- If not logged in, show login and signup else show logout -->
         <li><a href="#signup">Signup</a></li>
         <li><a href="#recipe">Recipe</a></li>
-        <li><a href="#post">Post</a></li>
+        <li><a href="#post">Make a Post</a></li>
     </ul>
 </nav>
 
