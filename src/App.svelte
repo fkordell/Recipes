@@ -7,6 +7,7 @@
         Posting,
         Profile,
         Recipe,
+        Post,
         Signup
     } from "./lib/Index.js"
     import RegistrationForm from "./lib/components/RegistrationForm.svelte";
@@ -35,6 +36,8 @@
             <RegistrationForm />
         {:else if $route === '#posts'}
             <Posts />
+        {:else if $route === '#post'}
+            <Post />
         {:else}
             <Recipe />
         {/if}
